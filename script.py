@@ -11,11 +11,9 @@ def get_images_with_annotations(path):
     l = [splitext(filename)[0] for filename in myDir]
     #Count occurences
     a = dict(Counter(l))
-    #Print files name that have same name and different extension
+    
     for k,v in tqdm(a.items()):
         if v > 1:
-            # #os.remove(k+".jpeg")
-            # os(k+".jpeg","annotations")
             shutil.move(k+".jpeg",os.path.join("annotations"))
             shutil.move(k+".txt",os.path.join("annotations"))
 
