@@ -4,6 +4,9 @@ from collections import Counter
 import shutil
 from tqdm import tqdm
 
+if not os.path.exists('annotations'):
+    os.makedirs('annotations')
+
 def get_images_with_annotations(path):
     #List containing all file names + their extension in path directory
     myDir = os.listdir(path)
